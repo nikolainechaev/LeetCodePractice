@@ -1,14 +1,16 @@
-class Solution:
+class Solution: 
     def isAnagram(self, s: str, t: str) -> bool:
-        sDictinary, tDictinary = {}, {}
+
         if len(s) != len(t):
-            return False
+            return False 
 
-        for char in range(len(s)):
-            sDictinary[s[char]] = 1 + sDictinary.get(s[char], 0)
-            tDictinary[t[char]] = 1 + tDictinary.get(t[char], 0)
+        sDict, tDict = {}, {}
+        
+        for i in range(len(s)):
+            sDict[s[i]] = 1 + sDict.get(s[i], 0)
+            tDict[t[i]] = 1 + tDict.get(t[i], 0)
 
-        for l in sDictinary:
-            if sDictinary[l] != tDictinary.get(l, 0):
+        for c in sDict:
+            if sDict[c] != tDict.get(c, 0):
                 return False
         return True
