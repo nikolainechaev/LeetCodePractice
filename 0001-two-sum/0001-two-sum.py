@@ -7,8 +7,6 @@ class Solution:
             if diff in dict:
                 return [dict[diff], i]
             dict[d] = i
-        return
-            
-            
+        return 
             
                 
