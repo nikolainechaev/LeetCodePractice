@@ -1,12 +1,41 @@
-class Solution: 
+class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        
+        dict1, dict2 = {}, {}
+        
         if len(s) != len(t):
             return False
-        d1, d2 = {}, {}
-        for l in range(len(s)):
-            d1[s[l]] = 1 + d1.get(s[l], 0)
-            d2[t[l]] = 1 + d2.get(t[l], 0)
-        for c in d1:
-            if d1[c] != d2.get(c, 0):
+        
+        for i in range(len(s)):
+            dict1[s[i]] = 1 + dict1.get(s[i], 0)
+            dict2[t[i]] = 1 + dict2.get(t[i], 0)
+        
+        for character in dict1:
+            if dict1[character] != dict2.get(character, 0):
                 return False
         return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
