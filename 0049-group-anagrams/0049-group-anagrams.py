@@ -1,13 +1,17 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         
-        res = defaultdict(list)
-
-        for s in strs:
-            count = [0] * 26
-
-            for c in s:
-                count[ord(c) - ord('a')] += 1
+        finalList = defaultdict(list)  # creates list: list dict
+        
+        for string in strs:
+            alphabetList = [0] * 26    # creates a-z placeholders
             
-            res[tuple(count)].append(s)
-        return res.values()
+            for letter in string:
+                alphabetList[ord(letter) - ord('a')] += 1 # insert 1s in alphabet order for each char into alphabetList
+        
+            finalList[tuple(alphabetList)].append(string) 
+# take finalList and create keys out of list from alphabetList and assign related string
+        
+        return finalList.values() # return only values within one list
+
+
