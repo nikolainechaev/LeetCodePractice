@@ -1,16 +1,12 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        
-        dict = defaultdict(list) # creates dict
-        
-        for str in strs:
-            alphabet = [0] * 28 # creates a-z placeholders
-            for char in str:
-                alphabet[ord(char) - ord('a')] += 1 # insert 1s in alphabet order for each char into alphabetList
-                
-            dict[tuple(alphabet)].append(str) # take finalList and create keys out of list from alphabetList and assign related string
-        return dict.values()
-                      
+        results = defaultdict(list)
+        for string in strs:
+            order = [0] * 28
+            for character in string: 
+                order[ord(character) - ord('a')] += 1
+            results[tuple(order)].append(string)
+        return results.values()
                       
                       
                       
