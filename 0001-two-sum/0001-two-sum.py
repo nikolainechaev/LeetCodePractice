@@ -1,16 +1,13 @@
 class Solution:
-    def twoSum(self, nums: [int], target: int) -> List[int]: 
+    def twoSum(self, nums:[int], target:int) -> List[int]: 
+        dictResult = {}
         
-        dict = {}
-        
-        for ind,  dig in enumerate(nums):
-            diff = target - dig
-            if diff in dict:
-                return [dict[diff], ind]
-            dict[dig] = ind
+        for ind, num in enumerate(nums):
+            diff = target - num
+            if diff in dictResult:
+                return [dictResult[diff], ind]
+            dictResult[num] = ind
         return
-            
-            
             
             
         
