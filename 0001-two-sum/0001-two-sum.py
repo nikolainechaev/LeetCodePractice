@@ -1,12 +1,12 @@
 class Solution:
     def twoSum(self, nums:[int], target:int) -> List[int]: 
+        
         dict = {}
         
-        for ind, num in enumerate(nums):
-            diff = target - num 
+        for index, number in enumerate(nums):
+            diff = target - number
             if diff in dict:
-                return [dict[diff], ind]
-            dict[num] = ind
-        return
-            
+                return [dict[diff], index]
+            dict[number] = index
+                
         
