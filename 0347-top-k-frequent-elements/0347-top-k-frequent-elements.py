@@ -6,8 +6,8 @@ class Solution:
         
         for number in nums:
             dict[number] = 1 + dict.get(number, 0) #forgot about "dict.get(number, 0)" also used "+=" instead of "="
-        for quantity, number in dict.items():  #forgot about ".items()"
-            list[number].append(quantity)
+        for number, quantity in dict.items():  #forgot about ".items()", also forgot about what goes first quantity or number...
+            list[quantity].append(number)
         
         results = []
         
