@@ -1,13 +1,13 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         
-        hashSet = set(nums) # creates unique and ordered list
         longest = 0
+        storage = set(nums)
         
-        for number in hashSet: 
-            if (number - 1) not in hashSet: #
+        for number in storage:
+            if (number-1) not in storage:
                 length = 1
-                while (number + length) in hashSet:
+                while (number + length) in storage:
                     length += 1
                 longest = max(length, longest)
         return longest
