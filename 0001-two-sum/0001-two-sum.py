@@ -1,10 +1,9 @@
 class Solution:
     def twoSum(self, nums:[int], target:int) -> List[int]: 
-        store = {}
+        bucket = {}
         
         for index, number in enumerate(nums):
             diff = target - number
-            if diff in store:
-                return [store[diff], index]
-            store[number] = index
-        return
+            if diff in bucket:
+                return [ bucket[diff], index ]
+            bucket[number] = index
