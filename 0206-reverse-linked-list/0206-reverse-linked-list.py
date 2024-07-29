@@ -5,9 +5,11 @@ class Solution:
         prev = None
         
         while curr:
-            nextValue = curr.next
+            nextL = curr.next
             
             curr.next = prev
             prev = curr
-            curr = nextValue
+            curr = nextL
+            
         return prev
+            
