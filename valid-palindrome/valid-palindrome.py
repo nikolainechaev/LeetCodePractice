@@ -15,4 +15,4 @@ class Solution:
     def isAlphaNum(self, c: str) -> bool:
         return (ord('A') <= ord(c) <= ord('Z') or
                ord('a') <= ord(c) <= ord('z') or
-               ord('0') <= ord(c) <= ord('9'))
+               ord('0') <= ord(c) <= ord('9'))  # The ord() function returns the number representing the unicode code of a specified character.
