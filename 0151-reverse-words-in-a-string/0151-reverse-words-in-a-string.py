@@ -1,8 +1,8 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
         
-        source = s.split()
-        reverseSource = source[::-1]
-        result = ' '.join(reverseSource)
+        arrayOfWords = s.split()
+        reverseArr = arrayOfWords[::-1]
+        finalString = ' '.join(reverseArr)
         
-        return result
+        return finalString
