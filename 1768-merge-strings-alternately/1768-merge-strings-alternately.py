@@ -8,9 +8,9 @@ class Solution:
         
         while pointer1 < length1 or pointer2 < length2:
             if pointer1 < length1:
-                result += word1[pointer1]
+                result.append(word1[pointer1])
                 pointer1 += 1
             if pointer2 < length2:
-                result += word2[pointer2]
+                result.append(word2[pointer2])
                 pointer2 += 1
         return ''.join(result)
