@@ -1,5 +1,8 @@
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        for number in range(n):
-            nums1[m + number] = nums2[number]
+        
+        for index, number in enumerate(nums2):
+            nums1[m + index] = number
+            print(n+index)
         nums1.sort()
+        return nums1
