@@ -1,17 +1,15 @@
-
-
-
 class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
+    def isAnagram(self, s:str, t:str) -> bool:
         if len(s) != len(t):
             return False
-        dictS, dictT = {}, {}
+        bucketS = {}
+        bucketT = {}
         
-        for i in range(len(s)):
-            dictS[s[i]] = 1 + dictS.get(s[i], 0)
-            dictT[t[i]] = 1 + dictT.get(t[i], 0)
-        
-        for p in dictS:
-            if dictS[p] != dictT.get(p, 0):
+        for char in range(len(t)):
+            bucketS[s[char]] = 1 + bucketS.get(s[char], 0)
+            bucketT[t[char]] = 1 + bucketT.get(t[char], 0)
+
+        for char in bucketS:
+            if bucketS[char] != bucketT.get(char, 0):
                 return False
         return True
