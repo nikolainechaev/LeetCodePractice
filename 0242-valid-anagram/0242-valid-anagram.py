@@ -13,3 +13,4 @@ class Solution:
             if bucketS[char] != bucketT.get(char, 0):
                 return False
         return True
+        
