@@ -1,16 +1,17 @@
 class Solution:
     def isAnagram(self, s:str, t:str) -> bool:
+        tBucket = dict()
+        sBucket = dict()
+
         if len(s) != len(t):
             return False
-        bucketS = {}
-        bucketT = {}
-        
-        for char in range(len(t)):
-            bucketS[s[char]] = 1 + bucketS.get(s[char], 0)
-            bucketT[t[char]] = 1 + bucketT.get(t[char], 0)
 
-        for char in bucketS:
-            if bucketS[char] != bucketT.get(char, 0):
-                return False
-        return True
+        for letter in range(len(s)):
+            tBucket[t[letter]] = tBucket.get(t[letter], 0) + 1
+            sBucket[s[letter]] = sBucket.get(s[letter], 0) + 1
         
+        for letter in sBucket:
+            if sBucket[letter] != tBucket.get(letter, 0):
+                return False
+
+        return True
