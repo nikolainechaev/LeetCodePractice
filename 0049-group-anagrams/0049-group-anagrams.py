@@ -1,9 +1,9 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        bucket = defaultdict(list) 
+        storage = defaultdict(list)
         for string in strs:
-            alphabet = [0] * 26 # [0, 0, 0, ....]
+            alphabet = [0] * 26
             for char in string:
-                alphabet[ord(char) - ord('a')] += 1
-            bucket[tuple(alphabet)].append(string)
-        return list(bucket.values())
+                alphabet[ord('a') - ord(char)] += 1
+            storage[tuple(alphabet)].append(string)
+        return list(storage.values())
