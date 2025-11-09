@@ -1,9 +1,10 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        storage = defaultdict(list)
+        anagram_groups = defaultdict(list)
         for string in strs:
-            alphabet = [0] * 26
+            order = [0] * 26
             for char in string:
-                alphabet[ord('a') - ord(char)] += 1
-            storage[tuple(alphabet)].append(string)
-        return list(storage.values())
+                place = ord(char) - ord("a")
+                order[place] += 1
+            anagram_groups[tuple(order)].append(string)
+        return list(anagram_groups.values())
