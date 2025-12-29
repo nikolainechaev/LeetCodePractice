@@ -1,17 +1,10 @@
 class Solution:
-    def isAnagram(self, s:str, t:str) -> bool:
-        firstDict = dict()
-        secondDict = dict()
-
+    def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
+        storageS, storageT = {}, {}
 
-        for c in range(len(s)):
-            firstDict[t[c]] = firstDict.get(t[c], 0) + 1
-            secondDict[s[c]] = secondDict.get(s[c], 0) + 1
-        
-        for item in firstDict:
-            if firstDict[item] != secondDict.get(item, 0):
-                return False
-
-        return True
+        for i in range(len(s)):
+            storageS[s[i]] = 1 + storageS.get(s[i], 0)
+            storageT[t[i]] = 1 + storageT.get(t[i], 0)
+        return storageS == storageT
